@@ -6,8 +6,11 @@ package com.example.irek.zadanie_rekrutacyjne;
 
 public interface ITaskList {
     public void incrementElement(int id);
+
     public void resetElement(int id);
+
     public void deleteElement(int id);
-    public void addPreviousValueToElement(int id);
-    //public void addElement();
+
+    public void addPreviousValueToElement(int id, int previousId);
+
 }

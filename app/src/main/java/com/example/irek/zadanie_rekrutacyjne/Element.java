@@ -1,5 +1,7 @@
 package com.example.irek.zadanie_rekrutacyjne;
 
+
+
 import java.util.Random;
 
 /**
@@ -14,7 +16,7 @@ public class Element {
 
         String randomColor;
         Random r = new Random();
-        int a = r.nextInt(2);
+        int a = r.nextInt( 2 );
 
         if (a % 2 == 0) {
             randomColor = "RED";
@@ -22,10 +24,11 @@ public class Element {
             randomColor = "BLUE";
         }
 
-        setColor(randomColor);
-        setCounter(0);
+        setColor( randomColor );
+        setCounter( 0 );
 
     }
+
 
     public String getColor() {
         return color;
@@ -36,19 +39,19 @@ public class Element {
     }
 
     public String getCounter() {
-        return String.valueOf(counter);
+        return String.valueOf( counter );
     }
 
     public void setCounter(int counter) {
         this.counter = counter;
     }
 
-    public void incrementCounter(){
+    public void incrementCounter() {
         counter++;
     }
 
-    public void resetCounter(){
-        counter=0;
+    public void resetCounter() {
+        counter = 0;
     }
 
 }

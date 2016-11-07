@@ -6,31 +6,32 @@ package com.example.irek.zadanie_rekrutacyjne;
  */
 
 public class TaskList extends Data implements ITaskList {
-    Data data = new Data();
 
     @Override
     public void incrementElement(int id) {
-        List.get(id).incrementCounter();
+        List.get( id ).incrementCounter();
     }
 
     @Override
     public void resetElement(int id) {
-        List.get(id).resetCounter();
+        List.get( id ).resetCounter();
     }
 
     @Override
     public void deleteElement(int id) {
-        data.deleteElement(id);
+        List.remove( id );
     }
 
-//    @Override
-//    public void addElement() {
-//        data.addElement();
-//    }
 
     @Override
-    public void addPreviousValueToElement(int id) {
-        int currentValue= Integer.valueOf(List.get(id).getCounter());
-        List.get(id).setCounter(currentValue+lastValue);
+    public void addPreviousValueToElement(int id, int previousId) {
+        if (previousId == -1) {
+            lastValue = 0;
+        } else {
+            lastValue = Integer.valueOf( List.get( previousId ).getCounter() );
+        }
+
+        int currentValue = Integer.valueOf( List.get( id ).getCounter() );
+        List.get( id ).setCounter( currentValue + lastValue );
     }
 }
